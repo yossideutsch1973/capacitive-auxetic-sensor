@@ -1,0 +1,26 @@
+# Core scientific computing
+numpy>=1.21.0
+matplotlib>=3.5.0
+scipy>=1.7.0
+
+# Jupyter notebook support
+jupyter>=1.0.0
+jupyterlab>=3.0.0
+ipykernel>=6.0.0
+
+# Testing framework
+pytest>=6.0.0
+pytest-cov>=3.0.0
+
+# Instrument control (optional - for real hardware)
+pyvisa>=1.11.0
+pyvisa-py>=0.5.0
+
+# Development tools
+black>=22.0.0
+flake8>=4.0.0
+mypy>=0.900
+
+# Documentation (optional)
+sphinx>=4.0.0
+sphinx-rtd-theme>=1.0.0 
