@@ -23,4 +23,8 @@ mypy>=0.900
 
 # Documentation (optional)
 sphinx>=4.0.0
-sphinx-rtd-theme>=1.0.0 
+sphinx-rtd-theme>=1.0.0
+
+# 3D CAD modeling for manufacturing
+cadquery-ocp>=7.7.0
+# Alternative: opencascade-python>=7.7.0 
