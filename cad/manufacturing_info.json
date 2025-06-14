@@ -1,0 +1,36 @@
+{
+  "sensor_specifications": {
+    "total_dimensions_mm": [
+      30,
+      30,
+      4
+    ],
+    "cell_size_mm": 10.0,
+    "wall_thickness_mm": 1.2,
+    "re_entrance_angle_deg": 45.0,
+    "poisson_ratio": -0.414,
+    "capacitor_gap_mm": 1.5,
+    "electrode_thickness_mm": 0.3
+  },
+  "3d_printing": {
+    "layer_height_mm": 0.2,
+    "infill_percent": 100,
+    "support_required": true,
+    "material": "PLA or PETG",
+    "nozzle_diameter_mm": 0.4,
+    "print_speed_mm_per_s": 50
+  },
+  "files_generated": [
+    "auxetic_sensor.step - Complete sensor assembly",
+    "auxetic_structure.step - Auxetic lattice only",
+    "bottom_plate.step - Bottom electrode",
+    "top_plate.step - Top electrode"
+  ],
+  "assembly_notes": [
+    "Print as single assembly or separate components",
+    "Remove support material carefully from auxetic structure",
+    "Test mechanical deformation before electrical connections",
+    "Connect wires to electrode plates via edge contacts",
+    "Seal electrical connections with flexible adhesive"
+  ]
+}

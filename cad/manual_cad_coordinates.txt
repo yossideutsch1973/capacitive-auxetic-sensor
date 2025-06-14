@@ -1,0 +1,52 @@
+AUXETIC CAPACITIVE SENSOR - Manual CAD Creation Guide
+============================================================
+
+SENSOR SPECIFICATIONS:
+  • Total size: 30.0×30.0×4.0 mm
+  • Cell size: 10.0 mm
+  • Wall thickness: 1.2 mm
+  • Re-entrance angle: 45.0°
+  • Poisson's ratio: -0.414
+
+UNIT CELL COORDINATES (2D Profile):
+  Node 1: (0.00, 0.00) mm
+  Node 2: (7.07, 0.00) mm
+  Node 3: (7.07, 7.07) mm
+  Node 4: (8.27, 7.07) mm
+  Node 5: (8.27, 8.27) mm
+  Node 6: (7.07, 8.27) mm
+  Node 7: (7.07, 15.34) mm
+  Node 8: (0.00, 15.34) mm
+
+UNIT CELL EDGES:
+  Edge 1: Node 1 → Node 2
+  Edge 2: Node 2 → Node 3
+  Edge 3: Node 3 → Node 4
+  Edge 4: Node 4 → Node 5
+  Edge 5: Node 5 → Node 6
+  Edge 6: Node 6 → Node 7
+  Edge 7: Node 7 → Node 8
+  Edge 8: Node 8 → Node 1
+
+MANUAL CAD STEPS:
+1. Create 2D sketch using the unit cell coordinates above
+2. Connect nodes with lines according to the edge list
+3. Extrude the 2D profile to 4.0 mm height
+4. Create a 3×3 rectangular pattern with 10 mm spacing
+5. Add bottom plate: 36×36×0.3 mm at Z=-0.3
+6. Add top plate: 36×36×0.3 mm at Z=5.5
+7. Add 5 support posts: ⌀1.5×5.5 mm at specified positions
+8. Create wire channels: 2×36×0.5 mm grooves
+
+SUPPORT POST POSITIONS:
+  • support_post_1: (3.0, 3.0) mm
+  • support_post_2: (27.0, 3.0) mm
+  • support_post_3: (3.0, 27.0) mm
+  • support_post_4: (27.0, 27.0) mm
+  • support_post_5: (15.0, 15.0) mm
+
+CAPACITOR PLATE DETAILS:
+  • Bottom plate: Z = -0.1 mm
+  • Top plate: Z = 5.7 mm
+  • Gap: 1.5 mm
+  • Thickness: 0.3 mm
