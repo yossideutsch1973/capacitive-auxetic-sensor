@@ -1,13 +1,87 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
 
 # Virtual environments
 .env
+.venv
 env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# VSCode configuration
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VSCode
 .vscode/
 
-# Jupyter Notebook checkpoints
-**/.ipynb_checkpoints/ 
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# CAD files - keep only final versions
+*.bak
+*.dwl
+*.dwl2
+*~
+temp_*
+tmp_*
+
+# FreeCAD temp files
+*.FCStd1
+*.FCBak
+
+# Large binary files that shouldn't be in git
+*.stl
+*.3mf
+*.obj
+*.ply
+
+# Log files
+*.log 
