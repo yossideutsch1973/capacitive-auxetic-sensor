@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auxetic Cell Pattern Simulator</title>
+  <style>
+    body { font-family: sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+    #controls { background: #fff; padding: 16px; box-shadow: 0 2px 8px #0001; }
+    label { margin-right: 16px; }
+    #canvas-container { display: flex; justify-content: center; align-items: center; height: 80vh; }
+    canvas { background: #fff; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <label>
+      Beam Length:
+      <input type="range" id="beamLength" min="30" max="120" value="70">
+      <span id="beamLengthVal">70</span>
+    </label>
+    <label>
+      Re-entrant Angle (deg):
+      <input type="range" id="angle" min="30" max="80" value="60">
+      <span id="angleVal">60</span>
+    </label>
+    <label>
+      Rows:
+      <input type="number" id="rows" min="1" max="10" value="4" style="width:40px;">
+    </label>
+    <label>
+      Columns:
+      <input type="number" id="cols" min="1" max="10" value="6" style="width:40px;">
+    </label>
+    <label>
+      Stretch:
+      <input type="range" id="stretch" min="0" max="50" value="0">
+      <span id="stretchVal">0</span>
+    </label>
+  </div>
+  <div id="canvas-container">
+    <canvas id="patternCanvas" width="900" height="600"></canvas>
+  </div>
+  <script>
+    // Get elements
+    const canvas = document.getElementById('patternCanvas');
+    const ctx = canvas.getContext('2d');
+    const beamLengthSlider = document.getElementById('beamLength');
+    const angleSlider = document.getElementById('angle');
+    const rowsInput = document.getElementById('rows');
+    const colsInput = document.getElementById('cols');
+    const stretchSlider = document.getElementById('stretch');
+    const beamLengthVal = document.getElementById('beamLengthVal');
+    const angleVal = document.getElementById('angleVal');
+    const stretchVal = document.getElementById('stretchVal');
+
+    // Parameters
+    let beamLength = +beamLengthSlider.value;
+    let angleDeg = +angleSlider.value;
+    let rows = +rowsInput.value;
+    let cols = +colsInput.value;
+    let stretch = +stretchSlider.value;
+
+    // Update display values
+    function updateLabels() {
+      beamLengthVal.textContent = beamLength;
+      angleVal.textContent = angleDeg;
+      stretchVal.textContent = stretch;
+    }
+
+    // Draw a single auxetic cell at (x, y)
+    function drawCell(x, y, beam, angle, stretchX, stretchY) {
+      // angle in radians
+      const theta = angle * Math.PI / 180;
+      // Calculate node positions
+      // Four nodes: A (top left), B (top right), C (bottom right), D (bottom left)
+      // The cell is a "bowtie" shape (re-entrant honeycomb)
+      // Top nodes
+      const halfBase = beam * Math.cos(theta / 2) / 2;
+      const height = beam * Math.sin(theta / 2);
+      // Apply stretch
+      const sx = 1 + stretchX / 100;
+      const sy = 1 + stretchY / 100;
+
+      // Node positions
+      const A = { x: x - halfBase * sx, y: y - height * sy };
+      const B = { x: x + halfBase * sx, y: y - height * sy };
+      const C = { x: x + halfBase * sx, y: y + height * sy };
+      const D = { x: x - halfBase * sx, y: y + height * sy };
+
+      // Draw beams (lines)
+      ctx.beginPath();
+      ctx.moveTo(A.x, A.y); ctx.lineTo(B.x, B.y); // Top beam
+      ctx.lineTo(C.x, C.y); // Right beam
+      ctx.lineTo(D.x, D.y); // Bottom beam
+      ctx.lineTo(A.x, A.y); // Left beam
+      ctx.moveTo(B.x, B.y); ctx.lineTo(D.x, D.y); // Diagonal
+      ctx.moveTo(A.x, A.y); ctx.lineTo(C.x, C.y); // Diagonal
+      ctx.strokeStyle = "#1976d2";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Draw joints
+      [A, B, C, D].forEach(pt => {
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = "#ff9800";
+        ctx.fill();
+      });
+    }
+
+    // Draw the full pattern
+    function drawPattern() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Calculate cell spacing
+      const theta = angleDeg * Math.PI / 180;
+      const cellW = beamLength * Math.cos(theta / 2);
+      const cellH = 2 * beamLength * Math.sin(theta / 2);
+
+      // Apply stretch to cell spacing
+      const sx = 1 + stretch / 100;
+      const sy = 1 - stretch / 200; // Negative Poisson's ratio: as x stretches, y contracts
+
+      const xSpacing = cellW * sx * 1.1;
+      const ySpacing = cellH * sy * 1.1;
+
+      // Center pattern
+      const offsetX = (canvas.width - (cols - 1) * xSpacing) / 2;
+      const offsetY = (canvas.height - (rows - 1) * ySpacing) / 2;
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          // Offset every other row for honeycomb effect
+          let dx = offsetX + col * xSpacing + (row % 2) * (xSpacing / 2);
+          let dy = offsetY + row * ySpacing;
+          drawCell(dx, dy, beamLength, angleDeg, stretch, -stretch/2);
+        }
+      }
+    }
+
+    // Event listeners
+    beamLengthSlider.addEventListener('input', () => {
+      beamLength = +beamLengthSlider.value;
+      updateLabels();
+      drawPattern();
+    });
+    angleSlider.addEventListener('input', () => {
+      angleDeg = +angleSlider.value;
+      updateLabels();
+      drawPattern();
+    });
+    rowsInput.addEventListener('input', () => {
+      rows = +rowsInput.value;
+      drawPattern();
+    });
+    colsInput.addEventListener('input', () => {
+      cols = +colsInput.value;
+      drawPattern();
+    });
+    stretchSlider.addEventListener('input', () => {
+      stretch = +stretchSlider.value;
+      updateLabels();
+      drawPattern();
+    });
+
+    // Initial draw
+    updateLabels();
+    drawPattern();
+  </script>
+</body>
+</html>

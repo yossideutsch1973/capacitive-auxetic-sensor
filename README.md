@@ -54,6 +54,14 @@ Quickstart
    ```bash
    jupyter lab simulations/simulation.ipynb
    ```
+6. Launch the interactive auxetic pattern simulator:
+   Simply open [`docs/auxetic_simulator.html`](docs/auxetic_simulator.html) in your web browser.
+
+   To access it from another device (e.g. your phone) on the same network, run:
+   ```bash
+   python scripts/serve_docs.py --host 0.0.0.0 --port 8000
+   ```
+   Then browse to `http://<your-ip>:8000/docs/auxetic_simulator.html` on your phone.
 
 ## 🖨️ 3D Printing
 
