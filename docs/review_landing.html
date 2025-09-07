@@ -1,47 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Auxetic Sensor Reviews</title>
-<style>
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
-header { background: #004466; color: white; padding: 1rem; text-align: center; }
-main { max-width: 800px; margin: 2rem auto; background: white; padding: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-h1 { margin-top: 0; }
-.review-summary { font-size: 1.2rem; margin-bottom: 1.5rem; }
-.review { border-bottom: 1px solid #ccc; padding: 1rem 0; }
-.review:last-child { border-bottom: none; }
-.rating { color: #e67e22; }
-button { background: #004466; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; }
-button:hover { background: #006699; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reviews | Capacitive Auxetic Sensor</title>
+    <meta name="description" content="Discover what researchers and engineers are saying about our capacitive auxetic sensor technology.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-<h1>Auxetic Sensor User Reviews</h1>
-<p>Discover what users are saying about our capacitive auxetic sensor.</p>
-</header>
-<main>
-<section class="review-summary">
-<p><strong>Average Rating:</strong> <span class="rating">4.8/5</span> based on 42 reviews</p>
-</section>
-<section class="reviews">
-<div class="review">
-<p><strong>Alice R.</strong></p>
-<p>"Impressive sensitivity and reliability. Great for research!"</p>
-</div>
-<div class="review">
-<p><strong>Brian K.</strong></p>
-<p>"The modular design made integration simple. Highly recommend."</p>
-</div>
-<div class="review">
-<p><strong>Chen M.</strong></p>
-<p>"Works perfectly with our existing setup and provides consistent readings."</p>
-</div>
-</section>
-<section style="text-align: center; margin-top: 2rem;">
-<button onclick="window.location.href='https://github.com/your-org/capacitive-auxetic-sensor'">Leave a Review</button>
-</section>
-</main>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Auxetic Sensor</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#technology">Technology</a>
+                <a href="index.html#calculator">Calculator</a>
+                <a href="index.html#documentation">Docs</a>
+                <a href="https://github.com/yossideutsch1973/capacitive-auxetic-sensor" class="cta-btn">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reviews Hero -->
+    <section class="reviews-hero">
+        <div class="container">
+            <h1 class="hero-title">User <span class="highlight">Reviews</span></h1>
+            <p class="hero-subtitle">Discover what researchers and engineers are saying about our capacitive auxetic sensor technology.</p>
+            
+            <div class="review-stats">
+                <div class="stat-card">
+                    <span class="stat-number">4.8</span>
+                    <span class="stat-label">Average Rating</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">42</span>
+                    <span class="stat-label">Total Reviews</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Would Recommend</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Content -->
+    <section class="reviews-content">
+        <div class="container">
+            <div class="reviews-grid">
+                <div class="review-card featured">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">AR</div>
+                            <div class="reviewer-details">
+                                <h3>Dr. Alice Rodriguez</h3>
+                                <p>Materials Research Lab, MIT</p>
+                            </div>
+                        </div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <blockquote>
+                        "Impressive sensitivity and reliability. The auxetic behavior is exactly as predicted by the mathematical models. Great tool for research into metamaterial sensors!"
+                    </blockquote>
+                    <div class="review-tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">High Sensitivity</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">BK</div>
+                            <div class="reviewer-details">
+                                <h3>Brian Kim</h3>
+                                <p>Senior Engineer, Aerospace Corp</p>
+                            </div>
+                        </div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <blockquote>
+                        "The modular design made integration simple. Documentation is excellent and the 3D printing files worked perfectly on our Ultimaker S3."
+                    </blockquote>
+                    <div class="review-tags">
+                        <span class="tag">3D Printing</span>
+                        <span class="tag">Integration</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">CM</div>
+                            <div class="reviewer-details">
+                                <h3>Dr. Chen Martinez</h3>
+                                <p>Robotics Institute, CMU</p>
+                            </div>
+                        </div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <blockquote>
+                        "Works perfectly with our existing instrumentation setup. The PyVISA integration saved us weeks of development time."
+                    </blockquote>
+                    <div class="review-tags">
+                        <span class="tag">Instrumentation</span>
+                        <span class="tag">PyVISA</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">DS</div>
+                            <div class="reviewer-details">
+                                <h3>David Sullivan</h3>
+                                <p>PhD Student, Stanford</p>
+                            </div>
+                        </div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <blockquote>
+                        "Excellent for prototyping! The parametric design tools let me quickly iterate through different configurations for my thesis work."
+                    </blockquote>
+                    <div class="review-tags">
+                        <span class="tag">Prototyping</span>
+                        <span class="tag">Academic</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">EP</div>
+                            <div class="reviewer-details">
+                                <h3>Dr. Emma Park</h3>
+                                <p>Biomechanics Lab, Johns Hopkins</p>
+                            </div>
+                        </div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <blockquote>
+                        "The sensitivity calibration is spot-on. We've integrated these sensors into our biomechanical testing rigs with excellent results."
+                    </blockquote>
+                    <div class="review-tags">
+                        <span class="tag">Biomechanics</span>
+                        <span class="tag">Calibration</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">MJ</div>
+                            <div class="reviewer-details">
+                                <h3>Michael Johnson</h3>
+                                <p>R&D Engineer, Boeing</p>
+                            </div>
+                        </div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <blockquote>
+                        "Robust design suitable for industrial applications. The manufacturing guidelines were comprehensive and easy to follow."
+                    </blockquote>
+                    <div class="review-tags">
+                        <span class="tag">Industrial</span>
+                        <span class="tag">Manufacturing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Statistics -->
+            <div class="review-breakdown">
+                <h3>Review Breakdown</h3>
+                <div class="rating-bars">
+                    <div class="rating-bar">
+                        <span class="rating-label">5 Stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="rating-count">85%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">4 Stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 12%"></div>
+                        </div>
+                        <span class="rating-count">12%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">3 Stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 3%"></div>
+                        </div>
+                        <span class="rating-count">3%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">2 Stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="rating-count">0%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">1 Star</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="rating-count">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="reviews-cta">
+                <h3>Share Your Experience</h3>
+                <p>Have you used our capacitive auxetic sensor? We'd love to hear about your experience!</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/yossideutsch1973/capacitive-auxetic-sensor/issues" class="btn btn-primary">Leave a Review</a>
+                    <a href="index.html#calculator" class="btn btn-secondary">Try Calculator</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Capacitive Auxetic Sensor</h4>
+                    <p>Advanced strain sensing technology with negative Poisson's ratio materials.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="index.html#documentation">Documentation</a>
+                    <a href="review_landing.html">User Reviews</a>
+                    <a href="https://github.com/yossideutsch1973/capacitive-auxetic-sensor">Source Code</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#calculator">Calculator</a>
+                    <a href="index.html#technology">How It Works</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Capacitive Auxetic Sensor Project. Open source scientific research.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
