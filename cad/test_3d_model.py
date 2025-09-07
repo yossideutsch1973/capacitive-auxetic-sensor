@@ -55,8 +55,6 @@ def test_geometry_generation():
     # Calculate Poisson's ratio
     poisson_ratio = calculate_poisson_ratio(1.0, alpha)
     print(f"✅ Poisson's ratio: {poisson_ratio:.3f} (auxetic: {poisson_ratio < 0})")
-    
-    return True
 
 def test_sensor_parameters():
     """Test different sensor configurations."""
@@ -87,7 +85,6 @@ def test_sensor_parameters():
         assert poisson_ratio < 0, f"{config['name']} should have negative Poisson's ratio"
     
     print("\n✅ All configurations validated")
-    return True
 
 def simulate_3d_model_generation():
     """Simulate 3D model generation process without CadQuery."""
