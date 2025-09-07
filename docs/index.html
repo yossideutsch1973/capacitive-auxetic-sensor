@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitive Auxetic Sensor - Interactive Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .demo-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .demo-card h2 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .demo-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .demo-button {
+            display: inline-block;
+            background: #004466;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .demo-button:hover {
+            background: #006699;
+        }
+        .features {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .features h3 {
+            margin-bottom: 1rem;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .github-link {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        .github-link:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Capacitive Auxetic Sensor</h1>
+            <p class="subtitle">Interactive demos and tools for testing auxetic sensor technology</p>
+        </header>
+
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h2>🎛️ Pattern Simulator</h2>
+                <p>Explore interactive auxetic cell patterns with real-time parameter adjustment. Visualize how beam length, re-entrant angle, and stretch affect the auxetic structure.</p>
+                <a href="auxetic_simulator.html" class="demo-button">Launch Simulator</a>
+            </div>
+
+            <div class="demo-card">
+                <h2>⭐ User Reviews</h2>
+                <p>See what researchers and engineers are saying about the capacitive auxetic sensor. Read reviews and contribute your own feedback.</p>
+                <a href="review_landing.html" class="demo-button">View Reviews</a>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>Key Features</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>Real-time Visualization</strong><br>
+                    Interactive parameter controls with immediate visual feedback
+                </div>
+                <div class="feature-item">
+                    <strong>Parametric Design</strong><br>
+                    Adjust beam length, angles, and stretch in real-time
+                </div>
+                <div class="feature-item">
+                    <strong>Research Ready</strong><br>
+                    Perfect for educational and research applications
+                </div>
+                <div class="feature-item">
+                    <strong>Browser Based</strong><br>
+                    No installation required - works in any modern browser
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                <a href="https://github.com/yossideutsch1973/capacitive-auxetic-sensor" class="github-link">
+                    View Source Code on GitHub
+                </a>
+            </p>
+            <p style="opacity: 0.7; font-size: 0.9rem;">
+                Open source research project for capacitive auxetic sensor development
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
