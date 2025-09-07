@@ -5,7 +5,10 @@ from pathlib import Path
 
 
 def serve(directory: str = 'docs', port: int = 8000, host: str = '0.0.0.0'):
+    import os
     path = Path(directory).resolve()
+    # Change to the directory to serve it properly
+    os.chdir(path)
     handler = http.server.SimpleHTTPRequestHandler
     httpd = socketserver.TCPServer((host, port), handler)
 
