@@ -55,9 +55,10 @@ Quickstart
    jupyter lab simulations/simulation.ipynb
    ```
 6. Launch the interactive auxetic pattern simulator:
-   Simply open [`docs/auxetic_simulator.html`](docs/auxetic_simulator.html) in your web browser.
+   - Locally: open [`docs/auxetic_simulator.html`](docs/auxetic_simulator.html) in your web browser.
+   - Online: the simulator is deployed to **GitHub Pages**. After pushing to this repository, visit the URL shown in the Pages deployment to run it directly from your browser.
 
-   To access it from another device (e.g. your phone) on the same network, run:
+   To access it from another device on the same network, run:
    ```bash
    python scripts/serve_docs.py --host 0.0.0.0 --port 8000
    ```
